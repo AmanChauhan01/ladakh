@@ -1,0 +1,130 @@
+*{margin: 0px; box-sizing: border-box;}
+.container{margin: auto; max-width: 1200px;}
+@font-face {
+  font-family: "frozen";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Ice%20kingdom%20-%20Bold%20-%20Por%20Kustren.woff");
+}
+
+.back_img{background: url(../images/ladakh\ copy.webp) no-repeat center top/cover; height: 650px; position: relative; z-index: 1;}
+
+.back_img div.mask {
+    position: absolute;
+    background: rgba(4, 4, 134, 0.5);
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: -1;
+  }
+.clouds{position: absolute; top: 0; left: 0;width: 100%; height: 100%; overflow: hidden;}
+.clouds img{position: absolute; bottom: 0; max-width: 100%; animation: animate calc(8s * var(--i)) linear infinite; opacity: 0.7;}
+@keyframes animate {
+  0%{transform: translateX(-100%);}
+  100%{transform: translateX(100%);}
+}
+
+/* wrap1 */
+.wrap1{padding: 5px;}
+.wrap1 .row .col-md-4 img{width: 70%;}
+.wrap1 .row .col-md-8{display: flex;justify-content: end;}
+.wrap1 .row .col-md-8 a{color: black; text-decoration: none; margin: 5px 0px 0px 5px; padding: 15px; font-weight: 500; font-size: 18px; position: relative; color: white;}
+.wrap1 .row .col-md-8 a:after {
+    content: "";
+    background-color: white;
+    height: 3px;
+    position: absolute;
+    width: 0;
+    left: 0;
+    bottom: -1px;
+    transition: 1s;
+  }
+.wrap1 .row .col-md-8 a:hover::after {
+    width: 100%
+  }
+
+  /* wrap2 */
+  .wrap2{margin-top: 20px; position: relative; z-index: 4; }
+  .wrap2 .row .col-md-7{padding-top: 100px;}
+.wrap2 .row .col-md-7 h1{color: white; font-weight: 900; font-size: 70px;font-family: "frozen", serif; } 
+.wrap2 .row .col-md-7 h1 span{color: rgb(6, 218, 218);}
+.wrap2 .row .col-md-7 .p1{color: white; font-size: 24px; margin-bottom: 40px; letter-spacing: -1px; font-family:cursive}
+.wrap2 .row .col-md-7 a{border: 3px solid rgb(6, 218, 218); color: black; text-decoration: none; padding: 10px 20px 10px 20px; background-color: white; border-radius: 100px; font-size: 18px; font-weight: 600;}
+.wrap2 .row .col-md-5 .form{background-color: rgb(247, 239, 239); padding: 15px; position: relative; z-index: 1; }
+.wrap2 .row .col-md-5 .form .p2{color: black; font-size: 23px; font-weight: 600; text-align: center; font-family: cursive;}
+.wrap2 .row .col-md-5 .form .p3{color: black; font-size: 16px; font-weight: 300; text-align: center; font-family: serif; margin-top: -15px;}
+
+
+.button {
+  min-width: 300px;
+  min-height: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4FD1C5;
+background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+.button::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(220px + 12px);
+  min-height: calc(50px + 12px);
+  border: 6px solid #00FFCB;
+  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.button:hover, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+.button:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+.button::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+.button:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
